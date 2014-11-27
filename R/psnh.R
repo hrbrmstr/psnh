@@ -34,9 +34,6 @@ outage$out <- cut(outage$without_power,
 # for ggplot2 use
 nh_map <- fortify(nh, region="NAME")
 
-# so we can get the data we need into the map
-nh_map <- merge(nh_map, outage, by="id", all.x=TRUE)
-
 gg <- ggplot(data=nh_map, aes(map_id=id))
 gg <- gg + geom_map(map=nh_map, aes(x=long, y=lat),
                     color="black", fill="white", size=0.2)
