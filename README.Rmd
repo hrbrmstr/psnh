@@ -1,0 +1,11 @@
+---
+title: "README"
+author: "@hrbrmstr"
+date: November 26, 2014
+output:
+  md_document:
+    variant: markdown_github
+---
+
+psnh is a quick project to plot PSNH outage info in R
+
