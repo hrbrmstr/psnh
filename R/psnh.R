@@ -36,9 +36,9 @@ nh_map <- fortify(nh, region="NAME")
 
 gg <- ggplot(data=nh_map, aes(map_id=id))
 gg <- gg + geom_map(map=nh_map, aes(x=long, y=lat),
-                    color="black", fill="white", size=0.2)
+                    color="#0e0e0e", fill="white", size=0.2)
 gg <- gg + geom_map(data=outage, map=nh_map, aes(fill=out),
-                    color="black", size=0.2)
+                    color="#0e0e0e", size=0.2)
 gg <- gg + scale_fill_brewer(type="seq", palette="RdPu",
                              name="Number of\ncustomer outages\nin each town")
 gg <- gg + coord_equal()
