@@ -1,13 +1,11 @@
-library(rgdal)
-library(rgeos)
 library(sp)
-library(maptools)
-library(ggplot2)
-library(RColorBrewer)
+library(rgdal)
 library(dplyr)
 library(rvest)
 library(stringi)
 library(scales)
+library(RColorBrewer)
+library(ggplot2)
 
 # for theme_map
 devtools::source_gist("https://gist.github.com/hrbrmstr/33baa3a79c5cfef0f6df")
