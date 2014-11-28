@@ -11,6 +11,7 @@ library(ggplot2)
 devtools::source_gist("https://gist.github.com/hrbrmstr/33baa3a79c5cfef0f6df")
 
 # NH towns shapefile
+# via http://www.mass.gov/anf/research-and-tech/it-serv-and-support/application-serv/office-of-geographic-information-massgis/datalayers/adjacent-states-town-boundaries.html
 nh <- readOGR("data/nhtowns/NHTOWNS_POLY.shp", "NHTOWNS_POLY")
 
 # PSNH outage info
