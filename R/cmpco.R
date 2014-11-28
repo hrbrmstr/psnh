@@ -50,7 +50,7 @@ gg <- gg + geom_map(map=me_map, aes(x=long, y=lat),
                     color="#0e0e0e", fill="white", size=0.2)
 gg <- gg + geom_map(data=towns, map=me_map, aes(fill=out),
                     color="#0e0e0e", size=0.2)
-gg <- gg + scale_fill_brewer(type="seq", palette="RdPu",
+gg <- gg + scale_fill_brewer(type="seq", palette="RdPu", drop=FALSE,
                              name="Number of\ncustomer outages\nin each town")
 gg <- gg + coord_equal()
 gg <- gg + labs(title=sprintf("%s Total CMP Customers Without Power",

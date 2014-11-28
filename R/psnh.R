@@ -33,12 +33,12 @@ outage$out <- cut(outage$without_power,
 # for ggplot2 use
 nh_map <- fortify(nh, region="NAME")
 
-gg <- ggplot(data=nh_map, aes(map_id=id))
-gg <- gg + geom_map(map=nh_map, aes(x=long, y=lat),
+gg <- ggplot()
+gg <- gg + geom_map(data=nh_map, map=nh_map, aes(x=long, y=lat, map_id=id),
                     color="#0e0e0e", fill="white", size=0.2)
-gg <- gg + geom_map(data=outage, map=nh_map, aes(fill=out),
+gg <- gg + geom_map(data=outage, map=nh_map, aes(fill=out, map_id=id),
                     color="#0e0e0e", size=0.2)
-gg <- gg + scale_fill_brewer(type="seq", palette="RdPu",
+gg <- gg + scale_fill_brewer(type="seq", palette="RdPu", drop=FALSE,
                              name="Number of\ncustomer outages\nin each town")
 gg <- gg + coord_equal()
 gg <- gg + labs(title=sprintf("%s Total PSNH Customers Without Power",
