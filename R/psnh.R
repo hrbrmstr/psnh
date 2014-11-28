@@ -43,7 +43,7 @@ unitil_nh$id <- stri_trans_totitle(unitil_nh$id)
 unitil_nh$total_customers <- as.numeric(gsub(",", "", unitil_nh$total_customers))
 unitil_nh$without_power <- as.numeric(gsub(",", "", unitil_nh$without_power))
 
-outage <- tbl_df(rbind(outage, unitil_nh)) %>%
+outage <- tbl_df(rbind(outage, unitil_nh))%>%
   group_by(id) %>%
   tally(wt=without_power) %>%
   select(id, without_power=n)
@@ -69,8 +69,3 @@ gg <- gg + labs(title=sprintf("%s Total PSNH Customers Without Power",
                               comma(sum(outage$without_power))))
 gg <- gg + theme_map() + theme(legend.position="right")
 gg
-
-
-
-
-
