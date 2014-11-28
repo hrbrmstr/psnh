@@ -1,5 +1,5 @@
 
-## NOTE - This NEEDS the psnh & cmpco code to be run first
+## NOTE - This NEEDS the psnh, unitil & cmpco code to be run first
 ## I'll eventually combine them all into one
 
 gg <- ggplot()
@@ -13,14 +13,14 @@ gg <- gg + geom_map(data=outage, map=nh_map, aes(fill=out, map_id=id),
                     color="#0e0e0e", size=0.2, drop=FALSE)
 gg <- gg + scale_fill_brewer(type="seq", palette="RdPu", drop=FALSE,
                              name="Number of\ncustomer outages\nin each town")
-gg <- gg + labs(title=sprintf("%s Total CMP + PSNH Customers Without Power",
-                              comma(sum(outage$without_power) + sum(towns$without_power))))
+gg <- gg + labs(title=sprintf("%s Total CMP + PSNH + Unitil Customers Without Power",
+                              comma(sum(outage$without_power) +
+                                      sum(unitil_nh$without_power) +
+                                      sum(towns$without_power))))
 gg <- gg + coord_equal()
 gg <- gg + theme_map() + theme(legend.position="right")
 gg
 
-
-
-
+ggsave("output/current.svg", plot=gg, width=7.1, height=7, units="in")
 
 
